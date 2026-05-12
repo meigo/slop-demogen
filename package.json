@@ -1,5 +1,5 @@
 {
-  "name": "demogen",
+  "name": "@slop/demogen",
   "version": "0.1.0",
   "description": "Record repo-committed demo GIFs/MP4s of web apps via Playwright + ffmpeg.",
   "type": "module",
