@@ -15,9 +15,9 @@
     }
   },
   "bin": {
-    "demogen": "./dist/cli.js"
+    "demogen": "./bin/demogen.mjs"
   },
-  "files": ["dist", "README.md", "LICENSE"],
+  "files": ["dist", "bin", "README.md", "LICENSE"],
   "engines": { "node": ">=20" },
   "scripts": {
     "build": "tsup",
