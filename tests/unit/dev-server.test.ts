@@ -60,10 +60,10 @@ describe('startDevServer (integration)', () => {
 
   it('rejects if readyLog never appears within timeout', async () => {
     const resolved = resolveDevServer({
-      command: 'node /nonexistent/script.mjs',
+      command: `node ${fixture} 9999`,
       port: 9999,
       readyLog: 'nope-never-prints'
     });
-    await expect(startDevServer(resolved, 1_000)).rejects.toThrow(/exited early|not become ready/i);
+    await expect(startDevServer(resolved, 1_000)).rejects.toThrow(/not become ready/i);
   });
 });
