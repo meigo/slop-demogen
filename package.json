@@ -5,7 +5,10 @@
   "type": "module",
   "license": "MIT",
   "author": "meigo",
-  "repository": "https://github.com/meigo/slop-demogen",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meigo/slop-demogen.git"
+  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -15,10 +18,17 @@
     }
   },
   "bin": {
-    "demogen": "./bin/demogen.mjs"
+    "demogen": "bin/demogen.mjs"
   },
-  "files": ["dist", "bin", "README.md", "LICENSE"],
-  "engines": { "node": ">=20" },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
