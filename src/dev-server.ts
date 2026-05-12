@@ -63,10 +63,10 @@ export async function startDevServer(resolved: ResolvedDevServer, timeoutMs = 30
   });
 
   await new Promise<void>((resolveReady, reject) => {
-    const timer = setTimeout(
-      () => reject(new Error(`Dev server did not become ready within ${timeoutMs}ms`)),
-      timeoutMs
-    );
+    const timer = setTimeout(() => {
+      proc.kill('SIGTERM');
+      reject(new Error(`Dev server did not become ready within ${timeoutMs}ms`));
+    }, timeoutMs);
     const matcher = resolved.readyLog;
     const isMatch = (line: string) =>
       typeof matcher === 'string' ? line.includes(matcher) : matcher.test(line);
